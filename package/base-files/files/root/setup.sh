@@ -138,4 +138,10 @@ if [ ${ENABLE_SIMPLIFIED_SETTINGS} -eq 1 ]; then
     [ -f /etc/init.d/samba ] && /etc/init.d/samba restart
 fi
 
+if [ -d /www/luci-static/argon ]; then
+    # set theme
+    uci set luci.main.mediaurlbase='/luci-static/argon'
+    uci commit luci
+fi
+
 logger "done"
