@@ -106,7 +106,7 @@ fi
 # Warning:
 #     Turning on this option will reduce security
 #     To turn it off, set to 0
-ENABLE_SIMPLIFIED_SETTINGS=1
+ENABLE_SIMPLIFIED_SETTINGS=0
 if [ ${ENABLE_SIMPLIFIED_SETTINGS} -eq 1 ]; then
     # ttyd: accessible by lan and wan
     [ -f /etc/init.d/ttyd ] && uci delete ttyd.@ttyd[0].interface
