@@ -17,7 +17,7 @@ DEFAULT_PACKAGES:=base-files libc libgcc busybox dropbear mtd uci opkg netifd fs
 block-mount coremark kmod-nf-nathelper kmod-nf-nathelper-extra kmod-ipt-raw wget libustream-openssl ca-certificates \
 default-settings luci luci-app-ddns luci-app-upnp luci-app-autoreboot \
 luci-app-vsftpd luci-app-ssr-plus luci-app-arpbind luci-app-wol \
-luci-app-flowoffload ddns-scripts_aliyun ddns-scripts_dnspod
+luci-app-flowoffload ddns-scripts_aliyun ddns-scripts_dnspod ipv6helper
 # For nas targets
 DEFAULT_PACKAGES.nas:=block-mount fdisk lsblk mdadm
 # For router targets
