@@ -100,9 +100,6 @@ if [ ${NEED_RESTART_SERVICE} -eq 1 ]; then
     logger "setup.sh: restart network services"
 fi
 
-# fix netdata issue
-[ -d /usr/share/netdata/web ] && chown -R root:root /usr/share/netdata/web
-
 # Warning:
 #     Turning on this option will reduce security
 #     To turn it off, set to 0
@@ -113,10 +110,6 @@ if [ ${ENABLE_SIMPLIFIED_SETTINGS} -eq 1 ]; then
 
     # samba
     if [ -f /etc/samba/smb.conf.template ]; then
-        uci set samba.@samba[0].name='FriendlyWrt'
-        uci set samba.@samba[0].workgroup='WORKGROUP'
-        uci set samba.@samba[0].description='FriendlyWrt'
-        uci set samba.@samba[0].homes='1'
         # samba: allow root access
         sed -i -e "/^\s*invalid users\s/s/^/#/" /etc/samba/smb.conf.template
         # samba: accessible by lan and wan
